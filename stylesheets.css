@@ -101,7 +101,8 @@ header nav {
 
 header nav .container {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
 }
 
 .home-logo {
@@ -138,7 +139,6 @@ header a:after {
   transition: width ease .3s;
 }
 
-
 nav ul {
   display: flex;
   flex-direction: column;
@@ -152,6 +152,16 @@ nav ul li {
 .phone-number {
   text-align: center;
   margin: .25em;
+}
+
+.menu {
+  width: 100%;
+}
+
+.menu-toggle {
+  border: none;
+  background: none;
+  margin-top: .5em;
 }
 
 .banner {
@@ -322,6 +332,12 @@ footer small a:hover {
   color: white;
 }
 
+@media screen and (max-width: 768px) {
+  .hidden {
+    display: none;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .container {
     width: 80%;
@@ -338,6 +354,7 @@ footer small a:hover {
   header nav .container {
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: nowrap;
   }
 
   .home-logo {
@@ -355,6 +372,14 @@ footer small a:hover {
   nav ul li {
     margin: .25em 1em;
     text-transform: uppercase;
+  }
+
+  .menu {
+    width: auto;
+  }
+
+  .menu-toggle {
+    display: none;
   }
 
   .phone-number {

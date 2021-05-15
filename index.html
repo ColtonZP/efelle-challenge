@@ -19,7 +19,12 @@
           <a href="/"><img src="./images/efelle.png" alt="efelle creative, Home"></a>
           <span id="logo-alt" class="screen-reader">efelle Creative</span>
         </h1>
-        <ul>
+        <button onclick="toggleMenu()" class="menu-toggle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#446286">
+            <path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z" />
+          </svg>
+        </button>
+        <ul class="menu hidden">
           <li>
             <a href="/">About</a>
           </li>
@@ -41,8 +46,9 @@
           <li>
             <a href="/">Client Login</a>
           </li>
+          <a href="tel: +18663697520" class="phone-number">866.396.7520</a>
         </ul>
-        <a href="tel: +18663697520" class="phone-number">866.396.7520</a>
+
     </nav>
 
     <div class="banner">
@@ -122,6 +128,7 @@
     </div>
   </footer>
   </div>
+  <script defer type="text/JavaScript" src="./menu.js"></script>
 </body>
 
 </html>
