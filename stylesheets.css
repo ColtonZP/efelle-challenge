@@ -61,6 +61,10 @@ a {
   text-decoration: none;
 }
 
+a, button {
+  cursor: pointer;
+}
+
 .container {
   width: 95%;
   max-width: 1300px;
@@ -100,9 +104,9 @@ header nav .container {
 }
 
 .home-logo {
-  width: 100%;
-  height: auto;
-  margin: 0;
+  width: 15%;
+  margin: auto;
+min-width: 100px;
 }
 
 .home-logo a img {
@@ -111,7 +115,28 @@ header nav .container {
 
 header a {
   color: #2e3d4d;
+  position: relative;
 }
+
+header a:hover {
+  color: #446286;
+}
+
+header a:hover::after {
+  width: 100%;
+}
+
+header a:after {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background:#446286;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: width ease .3s;
+}
+
 
 nav ul {
   display: flex;
@@ -138,6 +163,8 @@ nav ul li {
   justify-content: center;
   flex-direction: column;
   padding: 4em 0;
+  height: 100vh;
+  min-height: 550px;
 }
 
 .banner h2,
@@ -175,6 +202,10 @@ nav ul li {
   padding: 1.25em 3.5em;
 }
 
+.enquire:hover {
+  background-color: #233346;
+}
+
 .content {
   font-size: 1.5rem;
   text-transform: uppercase;
@@ -183,7 +214,7 @@ nav ul li {
 }
 
 .content p {
-  padding-bottom: .25em;
+  margin-bottom: 0;
   text-align: center;
   color: #333;
   line-height: 2;
@@ -201,7 +232,7 @@ nav ul li {
   border: #333 1px solid;
   width: 2ch;
   margin: auto;
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
 }
 
 .services {
@@ -286,6 +317,10 @@ footer small a {
   color: #446286;
 }
 
+footer small a:hover {
+  color: white;
+}
+
 @media screen and (min-width: 768px) {
   .container {
     width: 80%;
@@ -295,14 +330,18 @@ footer small a {
     height: 100vh;
   }
 
+  header nav {
+    position: fixed;
+  }
+
   header nav .container {
     flex-direction: row;
     justify-content: space-between;
   }
 
   .home-logo {
-    width: 15%;
     min-width: 200px;
+    margin: auto;
   }
 
   nav ul {
