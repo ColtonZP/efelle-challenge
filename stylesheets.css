@@ -31,25 +31,17 @@ p {
 
 h1,
 h2,
-h3,
-h4,
-h5 {
-  margin: 3rem 0 1.38rem;
+h3 {
   font-weight: 400;
   line-height: 1.3;
 }
 
-h1 {
-  margin-top: 0;
-  font-size: 5.653rem;
-}
-
 h2 {
-  font-size: 3.998rem;
+  font-size: 5.063rem;
 }
 
 h3 {
-  font-size: 1.999rem;
+  font-size: 2.25rem;
 }
 
 small {
@@ -73,6 +65,7 @@ a {
   width: 80%;
   max-width: 1300px;
   margin: 0 auto;
+  position: relative;
 }
 
 .screen-reader {
@@ -89,12 +82,19 @@ a {
 }
 
 header {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header nav {
   background: url('./images/header-bg.jpeg');
   position: sticky;
   top: 0;
+  z-index: 10;
 }
 
-header .container {
+header nav .container {
   display: flex;
   flex-direction: column;
 }
@@ -103,19 +103,14 @@ header .container {
   width: 100%;
   height: auto;
   margin: 0;
-  position: relative;
 }
-
-/* .home-logo a {
-  position: absolute;
-  display: inline;
-  top: 0;
-  height: 100%;
-  width: 100%;
-} */
 
 .home-logo a img {
   width: 100%;
+}
+
+header a {
+  color: #2e3d4d;
 }
 
 nav ul {
@@ -133,12 +128,58 @@ nav ul li {
   margin: .25em;
 }
 
+.banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)),
+    url('./images/banner.jpg') center/cover no-repeat;
+  color: white;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 4em;
+}
+
+.banner h2,
+.banner p {
+  text-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
+}
+
+.banner h2 {
+  text-transform: uppercase;
+}
+
+.banner hr {
+  width: 10ch;
+  border: white 1px solid;
+  margin-bottom: 1em;
+}
+
+.tag-line {
+  font-size: 3.375rem;
+  font-family: "Architects Daughter";
+  margin: 0;
+}
+
+.description {
+  margin-bottom: 2em;
+  font-size: 1.5rem;
+}
+
+.enquire {
+  background-color: #446286;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  padding: 1.25em 3.5em;
+}
+
 
 @media screen and (min-width: 768px) {
-  header .container {
+  header nav .container {
     flex-direction: row;
     justify-content: space-between;
-    position: relative;
   }
 
   .home-logo {
@@ -147,22 +188,24 @@ nav ul li {
   }
 
   nav ul {
-    height: 100%;
     flex-direction: row;
     padding: 3em 0 .5em;
     flex-wrap: wrap;
     justify-content: flex-end;
   }
 
-   nav ul li {
-     margin: .25em 1em;
-     text-transform: uppercase;
-     color: #333;
-   }
+  nav ul li {
+    margin: .25em 1em;
+    text-transform: uppercase;
+  }
 
   .phone-number {
     position: absolute;
     right: 0;
     top: 1em;
+  }
+
+  .banner {
+    flex: 1;
   }
 }
