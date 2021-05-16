@@ -277,7 +277,6 @@ nav ul li {
 }
 
 .services h3 {
-  /* position: absolute; */
   position: relative;
   border-radius: 50%;
   background: rgba(0, 0, 0, .4);
@@ -291,17 +290,26 @@ nav ul li {
   color: white;
   flex-direction: column;
   font-family: Teko;
+  transition: background-color .2s ease;
 }
 
 .services h3::after {
   content: '';
   position: absolute;
-  bottom: .25em;
   display: block;
   border: 1px white solid;
-  width: 2ch;
+  width: 10%;
   height: 1px;
-  top: calc(50% + 1em);
+  top: calc(50% + .6em);
+  transition: width .3s ease;
+}
+
+.service-item:hover h3:after {
+  width: 70%;
+}
+
+.service-item:hover h3 {
+  background-color: #446286;
 }
 
 footer {
